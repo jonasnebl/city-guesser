@@ -40,7 +40,6 @@ bar = new mapboxgl.ScaleControl({
 map.addControl(bar);
 
 
-
 // function for showing the map given a level and stage
 
 function showMap(level) {
@@ -116,7 +115,6 @@ function showMap(level) {
   }
 
 
-
   // setting up an array of just these citeis
 
   var cities_select = [level_array[rando_m0],level_array[rando_m1],level_array[rando_m2],level_array[rando_m3]]
@@ -153,7 +151,6 @@ function showMap(level) {
   map.panTo([cx,cy]);
   
   
-
   // adding names to the form
 
   document.getElementById("p1").innerHTML = "<b>" + cities_select[0]["properties"]["NAME"] + "</b>, " + cities_select[0]["properties"]["ADM0NAME"]
@@ -164,13 +161,9 @@ function showMap(level) {
 };
 
 
-
-
 // show the initial map
 
 showMap(clevel)
-
-
 
 
 // function for what happens when submit is clicked
