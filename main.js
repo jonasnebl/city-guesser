@@ -10,12 +10,16 @@ mapboxgl.accessToken = 'meow';
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2Nob29sb2ZjaXRpZXMiLCJhIjoiY2w2bnFhaWJrMDNibjNqdGZibmhtNXpxbyJ9.ogVJPKMFm_JGVv8wNDsi9A';
 
 
+// seed for random numbers
+var seed = 42
+
 // function for a random int within a range
-
 function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  // not uniform, but doesn't really matter
+  var x = Math.sin(seed++) * 10000;
+  randomNumber = x - Math.floor(x);
+  return Math.floor(randomNumber * (max - min + 1)) + min;
 }
-
 
 // initialize the map
 
@@ -122,6 +126,9 @@ function showMap(level) {
   // random city of these 4
 
   rando_i = getRandomInt(0, 3)
+
+  // print selected city to console log
+  console.log("Correct answer: " + cities_select[rando_i]["properties"]["NAME"])
 
   p_score = score + 100 * (5 + 5 * (1 - cities_select[rando_i]["properties"]["WORLDCITY"]) + parseInt(cities_select[rando_i]["properties"]["SCALERANK"]))
 
